@@ -120,7 +120,6 @@ Private Sub Worksheet_Change(ByVal Target As Range)
         activeToLast = Target.Address(RowAbsolute:=False, ColumnAbsolute:=False) & ":" & currentColumn & 100
         
         'Find last row of current state
-        'Set NextFree = Range(activeToLast).Cells.SpecialCells(xlCellTypeBlanks) 'Find first empty cell from current input position
         Set NextFree = GetLastRow(Range(activeToLast))
         lastRow = NextFree.Offset(-1).Row
         
